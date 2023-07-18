@@ -55,7 +55,8 @@ const App = (props) => {
 		if (queryNeeded) {
 			setQueryNeeded(false)
 		}
-	}, [queryNeeded]);
+
+	}, [queryNeeded, customer]);
 
 	const unregister = fetchIntercept.register({
 		request: function (url, config) {
@@ -99,8 +100,6 @@ const App = (props) => {
 
 		const headers = {
 			'Content-type': 'application/json',
-			'Access-Control-Allow-Origin': 'localhost:3000/',
-			'Access-Control-Allow-Methods': 'POST',
 			'Accept': 'application/json, text/plain, */*',
 		}
 
@@ -180,8 +179,6 @@ const App = (props) => {
 
 			const headers = {
 				'Content-type': 'application/json',
-				'Access-Control-Allow-Origin': 'localhost:3000/',
-				'Access-Control-Allow-Methods': 'PUT',
 				'Accept': 'application/json, text/plain, */*',
 			}
 
@@ -219,8 +216,6 @@ const App = (props) => {
 
 			const headers = {
 				'Content-type': 'application/json',
-				'Access-Control-Allow-Origin': 'localhost:3000/',
-				'Access-Control-Allow-Methods': 'PUT',
 				'Accept': 'application/json, text/plain, */*',
 			}
 
@@ -279,8 +274,6 @@ const App = (props) => {
 
 		const headers = {
 			'Content-type': 'application/json',
-			'Access-Control-Allow-Origin': 'localhost:3000/',
-			'Access-Control-Allow-Methods': 'POST',
 			'Accept': 'application/json, text/plain, */*',
 		}
 
@@ -328,8 +321,6 @@ const App = (props) => {
 
 		const headers = {
 			'Content-type': 'application/json',
-			'Access-Control-Allow-Origin': 'localhost:3000/',
-			'Access-Control-Allow-Methods': 'PUT',
 			'Accept': 'application/json, text/plain, */*'
 		}
 
@@ -352,8 +343,6 @@ const App = (props) => {
 	const deleteOrder = (o) => {
 		const headers = {
 			'Content-type': 'application/json',
-			'Access-Control-Allow-Origin': 'localhost:3000/',
-			'Access-Control-Allow-Methods': 'PUT',
 			'Accept': 'application/json, text/plain, */*'
 		}
 

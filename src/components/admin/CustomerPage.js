@@ -38,7 +38,7 @@ const CustomerPage = (props) => {
 			history.push('/admin');
 		}
 
-	}, [customer, history])
+	}, [customer, history, setCustomer])
 
 	const lastFour = (num) => {
 		let theNum = num.toString();

@@ -18,6 +18,10 @@ const Account = (props) => {
 
 	useEffect(() => {
 
+		if (!customer && document.cookie !== "") {
+			setCustomer(document.cookie);
+		}
+
 		if (customer) {
 
 			const theCards = [];
@@ -55,7 +59,7 @@ const Account = (props) => {
 			});
 		}
 
-	}, [customer, paymentMethod, setOrder])
+	}, [customer, paymentMethod, setOrder, setCustomer])
 
 	const lastFour = (num) => {
 		let theNum = num.toString();
@@ -63,12 +67,16 @@ const Account = (props) => {
 		return theNum;
 	}
 
+	const capitalize = (text) => {
+		return text.charAt(0).toUpperCase() + text.slice(1);
+	}
+
 	return (
 		<Article>
 			{!customer && <Redirect to="/shillelaghs-r-us/sign-in" />}
 			<MDBContainer>
 				<MDBJumbotron>
-					<p className="h4 display-4">{customer && customer.firstName}'s account</p>
+					<p className="h4 display-4">{customer && capitalize(customer.firstName)}'s account</p>
 				</MDBJumbotron>
 				<MDBCard>
 					<MDBCardHeader>
@@ -76,9 +84,9 @@ const Account = (props) => {
 					</MDBCardHeader>
 					<MDBCardBody>{customer &&
 						<section>
-							<p>Username: {customer.username}</p>
-							<p>First name: {customer.firstName}</p>
-							<p>Last name: {customer.lastName}</p>
+							<p>Username: {capitalize(customer.username)}</p>
+							<p>First name: {capitalize(customer.firstName)}</p>
+							<p>Last name: {capitalize(customer.lastName)}</p>
 							<p>Email: {customer.email}</p>
 						</section>}
 					</MDBCardBody>

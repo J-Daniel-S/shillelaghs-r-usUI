@@ -11,7 +11,12 @@ const AdminNavbar = (props) => {
 		 confirm, setConfirm, order, setOrder, price, setPrice, deleteConfirm, setDeleteConfirm, paymentMethod, setPaymentMethod, address, setAddress, admin, setAdmin] = useContext(ShillelaghContext);
 	const history = useHistory();
 
-	useEffect(() => admin ? console.log(''): history.push('/shillelaghs-r-us/home'));
+	useEffect(() => {
+		if (document.cookie && !admin) {
+			setAdmin(document.cookie);
+		}
+		admin ? console.log(''): history.push('/shillelaghs-r-us/home')},
+		[admin, history, setAdmin]);
 	
 	const goToCustomers = () => {
 		history.push('/admin/customers');
@@ -24,6 +29,7 @@ const AdminNavbar = (props) => {
 	const logout = () => {
 		setAdmin(null);
 		setCustomer(null);
+		document.cookie = null;
 		history.push('/shillelaghs-r-us/home');
 	}
 

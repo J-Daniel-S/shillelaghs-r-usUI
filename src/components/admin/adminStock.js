@@ -50,8 +50,8 @@ const AdminStock = (props) => {
 
 			const headers = {
 				'Content-type': 'application/json',
-				'Access-Control-Allow-Origin': 'localhost:3000/',
-				'Access-Control-Allow-Methods': 'POST',
+				// 'Access-Control-Allow-Origin': 'localhost:3000/',
+				// 'Access-Control-Allow-Methods': 'POST',
 				'Accept': 'application/json, text/plain, */*',
 			}
 
@@ -77,8 +77,8 @@ const AdminStock = (props) => {
 
 		const headers = {
 			'Content-type': 'application/json',
-			'Access-Control-Allow-Origin': 'localhost:3000/',
-			'Access-Control-Allow-Methods': 'DELETE',
+			// 'Access-Control-Allow-Origin': 'localhost:3000/',
+			// 'Access-Control-Allow-Methods': 'DELETE',
 			'Accept': 'application/json, text/plain, */*',
 		}
 

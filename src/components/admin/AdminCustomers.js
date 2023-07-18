@@ -17,11 +17,12 @@ const AdminCustomers = (props) => {
 	const history = useHistory();
 
 	useEffect(() => {
+
 		if (!loggedAdmin) {
 			history.push('/shillelaghs-r-us/home');
 		}
 		getCustomers();
-	}, [loggedAdmin, history]);
+	}, [loggedAdmin, history, setLoggedAdmin]);
 
 	const changed = input => event => {
 		switch (input) {
@@ -71,7 +72,7 @@ const AdminCustomers = (props) => {
 		}
 
 		const headers = {
-			'Access-Control-Allow-Origin': 'localhost:3000',
+			// 'Access-Control-Allow-Origin': 'localhost:3000',
 			'Content-Type': 'Application/json; charset=utf-8',
 			method: 'POST'
 		}

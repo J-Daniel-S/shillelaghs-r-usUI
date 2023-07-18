@@ -14,6 +14,7 @@ const InStock = (props) => {
 
 
 	useEffect(() => {
+
 		const available = [];
 
 		for (let shi of shillelaghs) {
@@ -22,7 +23,7 @@ const InStock = (props) => {
 			}
 		}
 		setStock(available);
-	}, [shillelaghs, cartContents]);
+	}, [shillelaghs, cartContents, customer, setCustomer]);
 
 	const addToCart = (s) => {
 		const arr = [...cartContents];
