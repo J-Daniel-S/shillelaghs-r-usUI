@@ -6,6 +6,7 @@ import ShillelaghContext from '../../context/ShillelaghContext';
 import NotCart from './variants/notCart';
 import CartOpen from './variants/cartOpen';
 import { Article } from '../styles/Styles';
+import PlaceHolder from '../inStock/variants/stock/placeholder/placeHolder.js';
 
 const InStock = (props) => {
 	const [stock, setStock] = useState([]);
@@ -47,6 +48,7 @@ const InStock = (props) => {
 
 	return (
 		<Article>
+			{shillelaghs[0] === 'Loading...' && <PlaceHolder />}
 			{(cartContents.length > 0 || cartOpen) && cartButton}
 			{!cartOpen && <NotCart stock={stock} addToCart={addToCart} />}
 			{cartOpen && <CartOpen stock={stock} addToCart={addToCart} removeFromCart={props.removeFromCart} />}

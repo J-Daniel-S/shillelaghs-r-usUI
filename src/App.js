@@ -45,12 +45,15 @@ const App = (props) => {
 		confirm, setConfirm, order, setOrder, price, setPrice, deleteConfirm, setDeleteConfirm, paymentMethod, setPaymentMethod, address, setAddress, admin, setAdmin, error, setError];
 
 	useEffect(() => {
+		setShillelaghs(['Loading...']);
 		fetch('http://localhost:8090/shillelaghs-r-us/shillelaghs').then(res => res.json()).then(res => {
 			try {
 				setShillelaghs(res);
 			} catch (e) {
 				alert("We're currently out of stock.  Please try again later");
 			}
+		}).catch(e => {
+			alert("Unable to reach our servers at this time. Check your internet connection or try again later.")
 		})
 		if (queryNeeded) {
 			setQueryNeeded(false)

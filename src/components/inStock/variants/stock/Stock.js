@@ -25,7 +25,7 @@ const Stock = (props) => {
 	
 	return (
 		<CardColumns>
-			{props.stock && props.stock.map(s => (
+			{props.stock && props.stock[0] !== 'Loading...' && props.stock.map(s => (
 				<MDBCard key={s.shillelaghId}>
 					<MDBCardBody>
 						<MDBRow>
